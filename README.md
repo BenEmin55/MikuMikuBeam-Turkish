@@ -31,7 +31,7 @@
 1. Depoyu indir:
    ```bash
    git clone https://github.com/BenEmin55/MikuMikuBeam-Turkish
-   cd mikumikubeam
+   cd MikuMikuBeam-Turkish
    ```
 
 2. Kütüphaneleri yükle:
