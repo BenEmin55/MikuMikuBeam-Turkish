@@ -5,7 +5,7 @@ import { SocksProxyAgent } from "socks-proxy-agent";
 // Misc
 export function createAgent(proxy) {
   if (proxy.protocol !== "socks4" && proxy.protocol !== "socks5") {
-    throw new Error("Unsupported proxy protocol for agent: " + proxy.protocol);
+    throw new Error("Agent için Desteklenmeyen proxy protokolu " + proxy.protocol);
   }
 
   const uri = `${proxy.protocol}://${
@@ -60,7 +60,7 @@ export function createHttpClient(
     config.httpsAgent = agent;
   } else {
     throw new Error(
-      "Unsupported proxy protocol for HTTP client: " + proxy.protocol
+      "HTTP istemcisi için desteklenmeyen proxy protokolü: " + proxy.protocol
     );
   }
 
@@ -82,7 +82,7 @@ export function createTcpClient(
 ) {
   if (proxy.protocol !== "socks4" && proxy.protocol !== "socks5") {
     throw new Error(
-      "Unsupported proxy protocol for TCP client: " + proxy.protocol
+      "TCP istemcisi için desteklenmeyen proxy protokolü: " + proxy.protocol
     );
   }
 
