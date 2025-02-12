@@ -1,200 +1,117 @@
-# Miku Miku Beam 💥⚡ (Network Stresser)
+# Miku Miku Beam 💥⚡ (Ağ Stres Test Canavarı)
 
-A fun and visually appealing stress testing server with a **Miku-themed** frontend, where you can configure and run attacks while enjoying a banger song in the background! 🎤✨
+**Anime kızı Miku'yla hack dünyasına gir!** Proxy'lerini yükle, hedefini seç ve arka planda çalan hareketli J-pop şarkısı eşliğinde saldırıya geç! 🎮🔥
 
-![Screenshot](docs/screenshot.png)
+![Ekran Görüntüsü](docs/screenshot.png)
 
-## Features 🎉
+## Neler Var? 🚀
 
-- 🐳 **Docker Ready**: MMB is ready to be built and run in a Docker container.
-- 🌐 **Real-time Attack Visualization**: View your attack’s progress and statistics in real-time as it runs. 🔥
-- 🎶 **Miku-themed UI**: A cute and vibrant design with Miku’s vibe to make the process more fun. Includes a banger song to keep you pumped! 🎧
-- 🧑‍💻 **Configurable Attack Parameters**: Easily set the attack method, packet size, duration, and packet delay via the frontend interface.
-- 🛠️ **Worker-Based Attack Handling**: The server processes attacks in separate workers for optimal performance and scalability.
-- 📊 **Live Stats**: Track the success and failure of each attack in real-time. See how many packets are sent and whether they succeed or fail.
-- 🖼️ **Aesthetic Design**: A visually cute interface to make your experience enjoyable. 🌸
-- 📡 **Attack Methods:**:
-  - `HTTP Flood` - Send random HTTP requests
-  - `HTTP Bypass` - Send HTTP requests that mimics real requests (Redirects, cookies, headers, resources...)
-  - `HTTP Slowloris` - Send HTTP requests and keep the connection open
-  - `Minecraft Ping` - Send Minecraft ping/motd requests
-  - `TCP Flood` - Send random TCP packets
+- 🐳 **Docker'da 1-Tık**: `docker-compose up` yaz, gerisini o halleder!
+- 🌐 **Canlı İzleme Paneli**: Paketleri otur ve izle, "oha 15k istek gitmiş" de!
+- 🎶 **Waifu Tasarım**: Pembe tema, sevimli Miku ikonları - gözlerin bayram etsin!
+- 🧑💻 **Kolay Kurulum**: "data/proxies.txt"ye proxy'lerini doldur, gerisi çorap söküğü!
+- 📊 **Gerçek Zamanlı Rapor**: " 500 error aldık abi ya:(" diye panik yapma, görürsün!
+- 💣 **Saldırı Menüsü**:
+  - `HTTP Flood` ➡️ Spam gibi HTTP at
+  - `Bypass Mode` ➡️ Güvenlik duvarını atla (Çerezlerle falan oyna)
+  - `Slowloris` ➡️ Bağlantıları sömür likeçi gibi
+  - `Minecraft Vur` ➡️ Sunucunun MOTD'sini s*keyim
+  - `TCP Kasırgası` ➡️ TCP paketlerini tükür!
 
-## Setup 🛠️
+## Kurulum Rehberi 🛠️
 
-### Prerequisites 📦
+### Önceden Yüklemen Gerekenler 📦
 
-Make sure you have the following installed:
+- **Node.js** (v14+ yüklü olsun)
+- **npm** (Node'la geliyor zaten)
 
-- Node.js (v14 or above) 🌱
-- npm (Node Package Manager) 📦
 
-### Development Mode 🔧
+### Geliştirici Modu (Kod Karalama Zamanı) 💻
 
-1. Clone this repository:
-
+1. Depoyu indir:
    ```bash
-   git clone https://github.com/sammwyy/mikumikubeam.git
+   git clone https://github.com/BenEmin55/MikuMikuBeam-Turkish
    cd mikumikubeam
    ```
 
-2. Install the required dependencies:
-
+2. Kütüphaneleri yükle:
    ```bash
    npm install
    ```
 
-3. Create the necessary files:
-   - `data/proxies.txt` - List of proxies.
-   - `data/uas.txt` - List of user agents.
+3. **Önemli Dosyalar**:
+   - `data/proxies.txt` ➡️ Her satıra 1 proxy (Format: ip:port)
+   - `data/uas.txt` ➡️ Sahte tarayıcı listesi (Chrome, Firefox vs.)
 
-4. Run the server in development mode:
-
+4. Başlat babuş:
    ```bash
    npm run dev
    ```
+   - **Frontend**: `http://localhost:5173`
+   - **Backend**: `http://localhost:3000`
 
-   - The **frontend** runs on `http://localhost:5173`.
-   - The **backend** runs on `http://localhost:3000`.
+### Canlı Mod (Gerçek Saldırı Zamanı) 💣
 
----
-
-### Production Mode 💥
-
-1. Clone the repository and navigate to the project directory:
-
-   ```bash
-   git clone https://github.com/sammwyy/mikumikubeam.git
-   cd mikumikubeam
-   ```
-
-2. Install the dependencies:
-
-   ```bash
-   npm install
-   ```
-
-3. Build the project:
-
+1. Projeyi derle:
    ```bash
    npm run build
    ```
 
-4. Start the server in production mode:
-
+2. Nuke'la:
    ```bash
    npm run start
    ```
+   - Hepsi `http://localhost:3000`de toplanır!
 
-   In production mode, both the **frontend** and **backend** are served on the same port (`http://localhost:3000`).
+## Nasıl Kullanılır? 🎮
 
-> Don't forget to add the necessary files `data/proxies.txt` and `data/uas.txt`.
+1. **Hedef Seç**: "Target URL"ye saldıracağın siteyi yaz (Örn: `http://kurban.com`)
 
-## Usage ⚙️
+2. **Metodu Seç**: 
+   - "HTTP Flood" ➡️ Klasik spam
+   - "Bypass" ➡️ Akıllı saldırı (Bot olduğunu belli etmez)
+   
+3. **Önerilen Ayarlar**
+   - ⏱️ Süre: 60 saniye ideal
+   - 📦 Paket Boyutu: 512 byte tatlı kaçar
+   - 🐢 Gecikme: 500ms (DDoS'tan kaçınmak için)
 
-Once the server is up and running, you can interact with it via the frontend:
+4. **BAŞLAT!** 🚀
+	   - "Beam" butonuna bas ve Miku'nun şarkısı eşliğinde ddosu izle!
 
-1. **Start Attack**:
-   - Set up the attack parameters: target URL, attack method (HTTP Flood, Slowloris, TCP, etc...), packet size, duration, and delay.
-   - Press "Start Attack" to initiate the stress test.
+## Proxy Eklemek İçin 🕵️♂️
 
-2. **Stop Attack**:
-   - Press "Stop Attack" to terminate the ongoing attack.
+Sağ üstteki 📋 butonuna bas:
+- Proxy formatları:
+  - `ip:port`
+  - `kullanici:parola@ip:port`
+  - `socks5://ip:port` 
 
-### Example Request
+## İpuçları 💡
 
-```json
-{
-  "target": "http://example.com",
-  "attackMethod": "http_flood",
-  "packetSize": 512,
-  "duration": 60,
-  "packetDelay": 500
-}
-```
+- 💣 **Minecraft Saldırısı**: Sunucu IP'sini yaz, "Minecraft Ping" seç - oyuncular giremesin!
+- 🐢 **Slowloris**: Küçük paketlerle uzun süreli işkence yap!
+- 🔥 **TCP Flood**: Hedefin portlarını balık istifi yaptır!
 
-## Adding Proxies and User-Agents
 
-Access to the ``data/proxies.txt`` and ``data/uas.txt`` can now be done fully in the frontend. Click the text button to the right of the beam button to open up the editor.
+## SSS ❓
 
-![AnnotatedImage](docs/annotated-button.png)
+**S: Proxy ekledim ama çalışmıyor?**  
+C: Ölü proxy koymuşsun, https://proxy6.net'ten taze proxyler al!
 
-## Worker-Based Attack Handling 🔧💡
+**S: "Concurrently hatası" alıyorum?**  
+C: CMD'yi yönetici olarak aç veya iki ayrı terminalde `npm run dev:client` ve `npm run dev:server` çalıştır.
 
-Each attack type is handled in a separate worker thread, ensuring that the main server remains responsive. The attack workers are dynamically loaded based on the selected attack method (HTTP, etc...).
+**S: Saldırı başlatınca bilgisayarım kasıyor?**  
+C: 1000 thread açıp "oha" deme! Ayarlardan thread sayısını düşür.
 
-## To-Do 📝
+## Uyarı ⚠️
 
-- Add more attack methods:
-  - UDP 🌐
-  - DNS 📡
-  - And more! 🔥
-
-- Enhance attack statistics and reporting for better real-time monitoring. 📊
-
-## Contributing 💖
-
-Feel free to fork the repo and open pull requests with new attack protocols, bug fixes, or improvements. If you have an idea for a new feature, please share it! 😄
-
-### Adding New Attack Methods ⚡
-
-To extend the server with new attack methods (e.g., Minecraft, TCP, UDP, DNS), you can create new worker files and add them to the server configuration.
-
-For example:
-
-- Add a new attack method in the frontend settings.
-- Create the corresponding worker file (e.g., `minecraftAttack.js`).
-- Update the attack handler configuration to include the new method.
-
-```javascript
-const attackHandlers = {
-  http_flood: "./workers/httpFloodAttack.js",
-  http_slowloris: "./workers/httpSlowlorisAttack.js",
-  tcp_flood: "./workers/tcpFloodAttack.js",
-  minecraft_ping: "./workers/minecraftPingAttack.js",
-
-  // Add more protocols as needed!
-  your_protocol: "./workers/yourProtocolAttack.js"
-};
-```
+⚠️ **BU ARACı OKUL SUNUCUSUNDA DENEME!**  
+⚠️ **"SADECE EĞİTİM İÇİN" DE HER YERE YAZ!**
 
 ---
 
-### FAQs ❓
-
-**1. What operating system does MMB support?**
-
-> **Windows**, **Linux**, **Mac** and **Android (untested)**
-
-**2. It crashes on startup, giving a "concurrently" error**
-
-> Try running two terminals instead of one, in the first one use "npm run dev:client", and in the other one "npm run dev:server". (This happened to several people with Windows 11)
-
-**3. I go to "<http://localhost:3000>" and nothing appears.**
-
-> Port `3000` is the server port, to see the UI you must use port `5173` (<http://localhost:5173>)
-
-**4. Requests fail to be sent to the target server (Read timeout and variations)**
-
-> You must put the corresponding proxies in the file `data/proxies.txt`. On each line, put a different proxy that will be used to perform the attack. The format must be the following:
->
-> - `protocol://user:password@host:port` (Proxy with authentication)
-> - `protocol://host:port`
-> - `host:port` (Uses http as default protocol)
-> - `host` (Uses 8080 as default port)
+**LICENSE**: MIT (Yani "istediğini yap ama beni suçlama" lisansı )
 
 ---
-
-## License 📝
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## Disclaimer 🚨
-
-Please note that this project is for educational purposes only and should not be used for malicious purposes.
-
----
-
-### (｡♥‿♥｡) Happy Hacking 💖🎶
