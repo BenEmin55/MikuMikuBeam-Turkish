@@ -76,7 +76,7 @@ function ConfigureProxiesAndAgentsView() {
       {loadingConfiguration ? (
         <div className="flex flex-col items-center justify-center space-y-2">
           <img src="/loading.gif" className="rounded-sm shadow-sm" />
-          <p>Loading proxies.txt and uas.txt...</p>
+          <p> proxies.txt yükleniyor ve uas.txt...</p>
         </div>
       ) : (
         <div className="w-[56rem] flex flex-col">
@@ -232,7 +232,7 @@ function App() {
       bots: old.bots,
       totalPackets: 0,
     }));
-    addLog("🍮 Preparing attack...");
+    addLog("🍮 Atak hazırlanıyor..");
 
     // Play audio
     if (audioRef.current) {
@@ -290,8 +290,7 @@ function App() {
                 : "text-white"
             }`}
           >
-            Because DDoS attacks are also cute and even more so when Miku does
-            them.
+           Çünkü DDoS saldırıları da çok tatlı, hele ki Miku yapınca daha da tatlı oluyor.
           </p>
         </div>
 
@@ -401,7 +400,7 @@ function App() {
                       : "text-white"
                   }`}
                 >
-                  Packet Size (kb)
+                  Paket Büyüklüğü (kb)
                 </label>
                 <input
                   type="number"
@@ -423,7 +422,7 @@ function App() {
                       : "text-white"
                   }`}
                 >
-                  Duration (seconds)
+                  Süre (seconds)
                 </label>
                 <input
                   type="number"
@@ -467,7 +466,7 @@ function App() {
             <div className="p-4 rounded-lg bg-gradient-to-br from-pink-500/10 to-blue-500/10">
               <div className="flex items-center gap-2 mb-2 text-pink-600">
                 <Zap className="w-4 h-4" />
-                <span className="font-semibold">Packets/sec</span>
+                <span className="font-semibold">Paketler/saniye</span>
               </div>
               <div
                 className={`text-2xl font-bold ${
@@ -482,7 +481,7 @@ function App() {
             <div className="p-4 rounded-lg bg-gradient-to-br from-pink-500/10 to-blue-500/10">
               <div className="flex items-center gap-2 mb-2 text-pink-600">
                 <Bot className="w-4 h-4" />
-                <span className="font-semibold">Active Bots</span>
+                <span className="font-semibold">Aktif Botlar</span>
               </div>
               <div
                 className={`text-2xl font-bold ${
@@ -497,7 +496,7 @@ function App() {
             <div className="p-4 rounded-lg bg-gradient-to-br from-pink-500/10 to-blue-500/10">
               <div className="flex items-center gap-2 mb-2 text-pink-600">
                 <Wifi className="w-4 h-4" />
-                <span className="font-semibold">Total Packets</span>
+                <span className="font-semibold">Toplam Paketler</span>
               </div>
               <div
                 className={`text-2xl font-bold ${
@@ -529,7 +528,7 @@ function App() {
               ))}
               {logs.length === 0 && (
                 <div className="italic text-gray-500">
-                  {">"} Waiting for Miku's power...
+                  {">"} Miku'nun gücünü bekliniyor...
                 </div>
               )}
             </div>
@@ -552,11 +551,11 @@ function App() {
           <span className="text-sm text-center text-gray-500">
             🎵 v1.0 made by{" "}
             <a
-              href="https://github.com/sammwyy/mikumikubeam"
+              href="https://github.com/BenEmin55/MikuMikuBeam-Turkish"
               target="_blank"
               rel="noreferrer"
             >
-              @Sammwy
+             Geliştirici: @Sammy Çeviren: @BenEmin55
             </a>{" "}
             🎵
           </span>
