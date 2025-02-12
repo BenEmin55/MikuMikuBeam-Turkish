@@ -49,7 +49,7 @@ io.on("connection", (socket) => {
     pps: 0,
     bots: proxies.length,
     totalPackets: 0,
-    log: "🍤 Connected to the server.",
+    log: "🍤 Sunucya bağlanıldı.",
   });
 
   socket.on("startAttack", (params) => {
@@ -59,13 +59,13 @@ io.on("connection", (socket) => {
 
     if (!attackWorkerFile) {
       socket.emit("stats", {
-        log: `❌ Unsupported attack type: ${attackMethod}`,
+        log: `❌ Desteklenmeyen Atak Türü: ${attackMethod}`,
       });
       return;
     }
 
     socket.emit("stats", {
-      log: `🍒 Using ${filteredProxies.length} filtered proxies to perform attack.`,
+      log: `🍒 Saldırıyı gerçekleştirmek için ${filteredProxies.length} filtrelenmiş proxy kullanılıyor.`,
       bots: filteredProxies.length,
     });
 
@@ -84,11 +84,11 @@ io.on("connection", (socket) => {
 
     worker.on("error", (error) => {
       console.error(`Worker error: ${error.message}`);
-      socket.emit("stats", { log: `❌ Worker error: ${error.message}` });
+      socket.emit("stats", { log: `❌ Worker hatası: ${error.message}` });
     });
 
     worker.on("exit", (code) => {
-      console.log(`Worker exited with code ${code}`);
+      console.log(`Worker  ${code} kodla çıkıldı`);
       socket.emit("attackEnd");
     });
 
@@ -108,7 +108,7 @@ io.on("connection", (socket) => {
     if (worker) {
       worker.terminate();
     }
-    console.log("Client disconnected");
+    console.log("Client bağlantısı kesildi");
   });
 });
 
@@ -160,9 +160,9 @@ const PORT = parseInt(process.env.PORT || "3000");
 httpServer.listen(PORT, () => {
   if (__prod) {
     console.log(
-      `(Production Mode) Client and server is running under http://localhost:${PORT}`
+      `(Üretim Modu) İstemci ve sunucu şu şekilde çalışıyor: http://localhost:${PORT}`
     );
   } else {
-    console.log(`Server is running under development port ${PORT}`);
+    console.log(`Sunucu geliştirme  ${PORT} portu altında çalışıyor`);
   }
 });
