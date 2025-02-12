@@ -42,14 +42,14 @@ const startAttack = () => {
 
     req.on("error", (err) => {
       parentPort.postMessage({
-        log: `❌ Request failed from ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}: ${err.message}`,
+        log: `❌ İstek başarısız oldu ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}: ${err.message}`,
         totalPackets,
       });
     });
 
     req.on("close", () => {
       parentPort.postMessage({
-        log: `⚠ Connection closed from ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}`,
+        log: `⚠ Bağlantı tarafından kapatıldı ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}`,
         totalPackets,
       });
     });
@@ -59,7 +59,7 @@ const startAttack = () => {
 
     totalPackets++;
     parentPort.postMessage({
-      log: `✅ Request sent from ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}`,
+      log: `✅ İstek gönderildi ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}`,
       totalPackets,
     });
   };
@@ -69,7 +69,7 @@ const startAttack = () => {
 
     if (elapsedTime >= duration) {
       clearInterval(interval);
-      parentPort.postMessage({ log: "Attack finished", totalPackets });
+      parentPort.postMessage({ log: "Atak bitti.", totalPackets });
       process.exit(0);
     }
 
