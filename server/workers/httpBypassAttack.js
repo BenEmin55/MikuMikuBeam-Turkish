@@ -52,13 +52,13 @@ const startAttack = () => {
       responseCallback: (error) => {
         if (error) {
           parentPort.postMessage({
-            log: `❌ Request failed from ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}: ${error.message}`,
+            log: `❌ İstek başarısız oldu ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}: ${error.message}`,
             totalPackets,
           });
         } else {
           totalPackets++;
           parentPort.postMessage({
-            log: `✅ Request successful from ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}`,
+            log: `✅ İstek başarılı oldu ${proxy.protocol}://${proxy.host}:${proxy.port} to ${fixedTarget}`,
             totalPackets,
           });
         }
