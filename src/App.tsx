@@ -102,7 +102,7 @@ function ConfigureProxiesAndAgentsView() {
             onClick={saveConfiguration}
             className="p-4 mt-4 text-white bg-gray-800 rounded-md hover:bg-gray-900"
           >
-            Write Changes
+            Değişiklikleri yaz
           </button>
         </div>
       )}
@@ -319,7 +319,7 @@ function App() {
                 type="text"
                 value={target}
                 onChange={(e) => setTarget(e.target.value)}
-                placeholder="Enter target URL or IP"
+                placeholder="Hedef Url Yada İp girin"
                 className={`${
                   animState === 0 || animState === 3 ? "" : "text-white"
                 } px-4 py-2 border border-pink-200 rounded-lg outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-200`}
@@ -444,7 +444,7 @@ function App() {
                       : "text-white"
                   }`}
                 >
-                  Packet Delay (ms)
+                  Paket Delay (ms)
                 </label>
                 <input
                   type="number"
@@ -549,13 +549,12 @@ function App() {
 
         <div className="flex flex-col items-center">
           <span className="text-sm text-center text-gray-500">
-            🎵 v1.0 made by{" "}
+            🎵 v1.0 tarafından yapıldı{" "}
             <a
               href="https://github.com/BenEmin55/MikuMikuBeam-Turkish"
               target="_blank"
               rel="noreferrer"
-            >
-             Geliştirici: @Sammy Çeviren: @BenEmin55
+            > @Sammy Çeviren: @BenEmin55
             </a>{" "}
             🎵
           </span>
